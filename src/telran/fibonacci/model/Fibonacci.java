@@ -4,6 +4,9 @@ import java.util.Iterator;
 
 public class Fibonacci implements Iterable <Integer> {
     private int quantity;
+    int currentPos = 0;
+    int num = 0;
+    int num1 = 1;
 
     public Fibonacci(int quantity) {
         this.quantity = quantity;
@@ -20,16 +23,21 @@ public class Fibonacci implements Iterable <Integer> {
 
     @Override
     public Iterator<Integer> iterator() {
+
         return new Iterator<Integer>() {
 
             @Override
             public boolean hasNext() {
-                return false;
+                return currentPos < quantity;
             }
 
             @Override
             public Integer next() {
-                return null;
+                int res = num + num1;
+                num = num1;
+                num1=res;
+                currentPos++;
+                return  res;
             }
         };
     }

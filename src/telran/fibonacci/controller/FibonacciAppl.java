@@ -6,6 +6,9 @@ public class FibonacciAppl {
     public static void main(String[] args) {
         Fibonacci fib = new Fibonacci(8);
         for (Integer num: fib){
+
+            System.out.println(num);
+
             //TODO: print all numbers 1,1,2,3,5,8,13,21
 
 
