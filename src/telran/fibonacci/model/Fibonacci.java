@@ -2,11 +2,9 @@ package telran.fibonacci.model;
 
 import java.util.Iterator;
 
-public class Fibonacci implements Iterable <Integer> {
+public class Fibonacci implements Iterable<Integer> {
     private int quantity;
-    int currentPos = 0;
-    int num = 0;
-    int num1 = 1;
+
 
     public Fibonacci(int quantity) {
         this.quantity = quantity;
@@ -24,7 +22,11 @@ public class Fibonacci implements Iterable <Integer> {
     @Override
     public Iterator<Integer> iterator() {
 
+
         return new Iterator<Integer>() {
+            int currentPos = 0;
+            int num = 0;
+            int num1 = 1;
 
             @Override
             public boolean hasNext() {
@@ -33,11 +35,15 @@ public class Fibonacci implements Iterable <Integer> {
 
             @Override
             public Integer next() {
+                if (currentPos == 0) {
+                    currentPos++;
+                    return 1;
+                }
                 int res = num + num1;
                 num = num1;
-                num1=res;
+                num1 = res;
                 currentPos++;
-                return  res;
+                return res;
             }
         };
     }

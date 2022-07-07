@@ -7,7 +7,7 @@ public class FibonacciAppl {
         Fibonacci fib = new Fibonacci(8);
         for (Integer num: fib){
 
-            System.out.println(num);
+            System.out.print(num + "\t");
 
             //TODO: print all numbers 1,1,2,3,5,8,13,21
 
